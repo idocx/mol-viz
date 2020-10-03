@@ -5,7 +5,7 @@ import { OrbitControls } from 'drei';
 import { createGlobalStyle } from 'styled-components';
 
 import Frame from './components/frame';
-import Ball from './components/ball';
+import { Ball } from './components/ball';
 import { getMassCenter } from './utils';
 
 const Style = createGlobalStyle`
@@ -42,8 +42,9 @@ function App() {
           antialias: true,
           alpha: true
         }}
+        orthographic
         camera={{
-          fov: 45
+          zoom: 240
         }}
         pixelRatio={window.devicePixelRatio}
       >
@@ -52,6 +53,14 @@ function App() {
         <directionalLight position={[0, 5, 5]} args={['#fff', 0.4]}/>
         <Frame position={[0, 0, 0]} base_mat={base_mat} />
         <Ball position={[0, 0, 0]} size={0.15}/>
+        <Ball position={[1.3, 0.2, 0]} size={0.15}/>
+        <Ball position={[0.3, 1.5, 0]} size={0.15}/>
+        <Ball position={[0, 0, 1.0]} size={0.15}/>
+        <Ball position={[1.6, 1.7, 0]} size={0.15}/>
+        <Ball position={[1.3, 0.2, 1.0]} size={0.15}/>
+        <Ball position={[0.3, 1.5, 1.0]} size={0.15}/>
+        <Ball position={[1.6, 1.7, 1.0]} size={0.15}/>
+        <Ball position={[0.8, 0.85, 0.5]} size={0.15}/>
         <OrbitControls />
       </Canvas>
     </>
